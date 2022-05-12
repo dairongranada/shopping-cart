@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+
+* {
+  font-family: "Oswald", sans-serif;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  text-decoration: none;
+}
+
+:root{
+  --colorNegro: #000;
+  --colorBlanco: #fff;
+  --colorGris: #b0b0b0;
+  --colorAzul: #055c72;
+  --colorcafe: #582406;
+}
+
+body { background-color:var(--colorNegro);}
+
+.nike img {
+  position: absolute;
+  pointer-events: none;
+  width: 97px;
+  top: 539px;
+  right: 22px;
+  -webkit-animation: bounce-down 2s linear infinite;
+    animation: bounce-down 2.5s linear infinite;
+}
+
+@keyframes bounce-down {
+  25% {
+    transform: translateY(-9px);
+  }
+  75% {
+    transform: translateY(9px);
+  }
+}
+
+
+hr{
+  background-color: #fff;
+  width: 100%;
+}
+
+nav {  
+  color: var(--colorNegro);
+  background-color: var(--colorGris);
+  width: 100%;
+  height: 10rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backContainer{
+  height: 150px;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backContainer select {
+  width: 10rem;
+  height: 35px;
+  box-shadow: 0 0 15px var(--colorGris);
+  background-color: var(--colorNegro);
+  color: var(--colorBlanco);
+}
+
+main {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.deleteCards {
+  position: absolute;
+  font-size: 25px;
+  border: none;
+  background-color: var(--colorBlanco);
+  transform: translate(87px, 4px);
+  cursor: pointer;
+}
+
+
+.card-product{
+  width: 225px;
+  height: 381px;
+  border-radius: 15px;
+  background-color: var(--colorGris);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.img-product{
+  width: 100%;
+  height: 50%;
+  border-radius: 15px 15px 0 0;
+}
+
+.name-product{
+  text-align: center;
+  padding: 4px;
+  color: var(--colorAzul);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.price-product{
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--colorcafe);
+}
+
+.btn-add {
+  width: 140px;
+  height: 40px;
+  color: var(--colorNegro);
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.btn-add:hover{
+  cursor: pointer;
+  background-color: var(--colorGris);
+  border: 1px solid var(--colorNegro);
+}
+
+
+
+
+

@@ -15,40 +15,17 @@
   --colorGris: #b0b0b0;
   --colorAzul: #055c72;
   --colorcafe: #582406;
+  --colorAguaMarina: #16a29f;
 }
 
 body { background-color:var(--colorNegro);}
 
-.nike img {
-  position: absolute;
-  pointer-events: none;
-  width: 97px;
-  top: 539px;
-  right: 22px;
-  -webkit-animation: bounce-down 2s linear infinite;
-    animation: bounce-down 2.5s linear infinite;
-}
-
-@keyframes bounce-down {
-  25% {
-    transform: translateY(-9px);
-  }
-  75% {
-    transform: translateY(9px);
-  }
-}
-
-
-hr{
-  background-color: #fff;
-  width: 100%;
-}
 
 nav {  
   color: var(--colorNegro);
   background-color: var(--colorGris);
   width: 100%;
-  height: 10rem;
+  height: 5rem;
   font-size: 2rem;
   display: flex;
   justify-content: center;
@@ -56,7 +33,7 @@ nav {
 }
 
 .backContainer{
-  height: 150px;
+  height: 130px;
   width: 100%;
   background-color: #000;
   display: flex;
@@ -82,18 +59,29 @@ main {
 }
 
 .deleteCards {
+  width: 29px;
   position: absolute;
-  font-size: 25px;
+  font-size: 20px;
   border: none;
-  background-color: var(--colorBlanco);
+  background-color: var(--colorAguaMarina);
+  color: #fff;
   transform: translate(87px, 4px);
   cursor: pointer;
 }
 
+.deleteAll{
+    height: 34px;
+    width: 150px;
+    background-color: #16a29f;
+    color: #fff;
+    position: absolute;
+    transform: translate(-1%, -92%);
+}
 
 .card-product{
   width: 225px;
   height: 381px;
+  margin-top: 15px;
   border-radius: 15px;
   background-color: var(--colorGris);
   display: flex;

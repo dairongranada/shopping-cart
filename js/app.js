@@ -6,6 +6,7 @@ window.addEventListener('load', listSelect);
 selectProducts.addEventListener('change', renderCards);
 
 
+
 function renderCards() {
   nikeForceOne.map(nikeForceOne => {
     if (nikeForceOne.product === selectProducts.value){
@@ -23,15 +24,14 @@ function listSelect() {
 }
 
 
+
 function createCards(nikeForceOne) {
   const {product,image,id,price} = nikeForceOne; // DESTRUCTURY
 
+  
+
     let contentCard = document.createElement('div');
     contentCard.classList.add('card-product');
-
-    let btnClose = document.createElement('button');
-    btnClose.classList.add('deleteCards');
-    btnClose.textContent = '❌';
 
     let imgCard = document.createElement('img');
     imgCard.setAttribute('src',image);
@@ -50,17 +50,41 @@ function createCards(nikeForceOne) {
     btnAdd.classList.add('btn-add');
     btnAdd.textContent = 'COMPRAR';
 
+    let btnDelete = document.createElement('button');
+    btnDelete.setAttribute('id', id);
+    btnDelete.classList.add('deleteCards');
+    btnDelete.textContent = 'X';
 
-    contentCard.appendChild(btnClose);
+    btnDelete.addEventListener('click', deleteCards); // EVENTO PARA ELIMINAR LA CARD
+
+  function deleteCards() { // FUNCION PARA ELIMINAR LA CARD
+    contentCard.remove(); 
+  }
+
+
+  let btnDeleteAll = document.createElement('button');
+  btnDeleteAll.classList.add('deleteAll');
+  btnDeleteAll.textContent = 'Eliminar Todas las Cartas';
+
+  btnDeleteAll.addEventListener('click', deleteCardsAll); // EVENTO PARA ELIMINAR TODAS LAS CARDS
+  function deleteCardsAll() { // FUNCION PARA ELIMINAR TODAS LAS CARDS
+    location.reload();
+    mainCards.remove();
+  }
+
+
     contentCard.appendChild(imgCard);
     contentCard.appendChild(nameProduct);
     contentCard.appendChild(priceProduct);
     contentCard.appendChild(btnAdd);
-    contentCard.appendChild(btnClose);
-
-
+    contentCard.appendChild(btnDelete);
+    mainCards.appendChild(btnDeleteAll);
     mainCards.appendChild(contentCard);
 
+    
+
 }
+
+
 
 

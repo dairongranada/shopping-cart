@@ -1,18 +1,50 @@
 
+window.addEventListener('load', listSelect);
+
 const mainCards = document.querySelector("main");
 const selectProducts = document.getElementById("select-products");
 
-window.addEventListener('load', listSelect);
+const btnAddProduct = document.getElementById("btnAddProduct");
+const closeContain = document.getElementById("closeContain");
+const placeProducts = document.querySelector(".placeProducts");
+const efecttBlur = document.getElementById("efecttBlur");
+
+const nameShoes =  document.getElementById("nameShoes");
+const priceShoes =  document.getElementById("priceShoes");
+const imgShoes =  document.getElementById("imgShoes");
+
+// ========   EVENTOS   ======== //
 selectProducts.addEventListener('change', renderCards);
+btnAddProduct.addEventListener("click", funAddContain);
+closeContain.addEventListener("click", funCloseContain);
 
 
 
+
+// ========  C R E A R   C A R D S  (MANUALMENTE)   ======== //
+function funAddContain() {
+  placeProducts.style.visibility ="visible";
+  efecttBlur.style.visibility ="visible";
+}
+
+function funCloseContain() { // 
+  placeProducts.style.visibility ="hidden";
+  efecttBlur.style.visibility ="hidden";
+}
+
+function imgCreate() { 
+}
+
+function CreateCards() { 
+}
+
+
+
+
+// ========   C  A  R  D  S  ======== //
 function renderCards() {
   nikeForceOne.map(nikeForceOne => {
-    if (nikeForceOne.product === selectProducts.value){
-      createCards(nikeForceOne);
-    }
-  }); 
+    if (nikeForceOne.product === selectProducts.value){createCards(nikeForceOne);}}); 
 }
 
 function listSelect() {
@@ -23,12 +55,8 @@ function listSelect() {
   });
 }
 
-
-
 function createCards(nikeForceOne) {
   const {product,image,id,price} = nikeForceOne; // DESTRUCTURY
-
-  
 
     let contentCard = document.createElement('div');
     contentCard.classList.add('card-product');
@@ -62,28 +90,19 @@ function createCards(nikeForceOne) {
   }
 
 
-  let btnDeleteAll = document.createElement('button');
-  btnDeleteAll.classList.add('deleteAll');
-  btnDeleteAll.textContent = 'Eliminar Todas las Cartas';
-
-  btnDeleteAll.addEventListener('click', deleteCardsAll); // EVENTO PARA ELIMINAR TODAS LAS CARDS
-  function deleteCardsAll() { // FUNCION PARA ELIMINAR TODAS LAS CARDS
-    location.reload();
-    mainCards.remove();
-  }
-
 
     contentCard.appendChild(imgCard);
     contentCard.appendChild(nameProduct);
-    contentCard.appendChild(priceProduct);
+    contentCard.appendChild(priceProduct); 
     contentCard.appendChild(btnAdd);
     contentCard.appendChild(btnDelete);
-    mainCards.appendChild(btnDeleteAll);
     mainCards.appendChild(contentCard);
 
     
 
 }
+
+
 
 
 

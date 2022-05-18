@@ -7,47 +7,165 @@
   list-style: none;
   text-decoration: none;
   text-decoration: none;
+  outline: none /*Quita el border Del los Inputs (Al dar click) */
 }
 
 :root{
   --colorNegro: #000;
   --colorBlanco: #fff;
-  --colorGris: #b0b0b0;
+  --colorGris: rgba(185, 179, 179, 0.461);
   --colorAzul: #055c72;
-  --colorcafe: #582406;
+  --colorVerde: #043944;
   --colorAguaMarina: #16a29f;
 }
 
-body { background-color:var(--colorNegro);}
+body {   
+  background: rgba(5,7,12,0.75);
+  background-image: linear-gradient(rgba(0,0,100,0.5),rgba(0,100,0,0.5)), url("../img/background.jpg");
+  background-attachment: fixed;background-size: cover;background-position: center;
+}
 
-
-nav {  
-  color: var(--colorNegro);
-  background-color: var(--colorGris);
-  width: 100%;
-  height: 5rem;
+nav {
+  position: fixed; z-index: 1;
+  width: 100%; height: 5rem;
   font-size: 2rem;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; gap: 15px;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.539);
+  color: var(--colorBlanco);
 }
 
-.backContainer{
-  height: 130px;
+.backContainer {
+  height: 150px;
   width: 100%;
-  background-color: #000;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  gap: 15px;
 }
 
 .backContainer select {
-  width: 10rem;
-  height: 35px;
-  box-shadow: 0 0 15px var(--colorGris);
-  background-color: var(--colorNegro);
+  width: 15rem; height: 45px;
+  background-color: var(--colorAzul);
   color: var(--colorBlanco);
+  border: none;
+  font-size: 16px;
+  text-align: center;
 }
+
+.backContainer button{
+  width: 15rem; height: 45px;
+  background-color: var(--colorAguaMarina);
+  color: var(--colorBlanco);
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+/*==========================================================*/
+#AgregarProduct{
+  background-color: var(--colorGris);
+  width: 400px; height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  gap: 5px;
+}
+
+.efectBlur{
+  visibility:hidden;
+  position: fixed;
+  top:0px;width: 100%;height: 100%;
+  background-color: var(--colorAguaMarina);
+  z-index: 1;
+}
+
+#efecttBlur{
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  background-color: rgba(0, 0, 0, 0.4);
+
+}
+
+.placeProducts {
+  visibility:hidden;
+  width: 22%; height: 53vh; padding: 42px 20px;
+  box-shadow: 7px 5px 10px var(--colorAzul);
+  background: var(--colorBlanco); color: var(--colorNegro);
+  top: 50%; left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+  font-size: 15px;
+  gap: 25px;
+  z-index: 1;
+}
+
+
+#closeContain {
+  width: 29px;
+  position: absolute;
+  font-size: 20px;
+  border: none;
+  background-color: var(--colorAguaMarina);
+  color: #fff;
+  transform: translate(-50, 50%);
+  cursor: pointer;
+  top: 4%;
+  left: 88%;
+}
+
+.placeProducts h1{
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.placeProducts label{
+  display: block;
+  padding: 11px 0 8px;
+}
+
+
+.placeProducts input{  
+  margin: bottom 20px;
+  width: 100%;
+  font-size: 15px;
+  
+}
+
+.placeProducts input[type="text"]{
+  border: none;
+  border-bottom: 1px solid var(--colorNegro);
+  background: transparent;
+  height: 40px;
+  color: var(--colorNegro);
+}
+
+
+.placeProducts input[type="file"] {  
+  margin-top: 4%;
+  height: 40px;
+  font-size: 15px;
+  color: var(--colorBlanco);
+  border: none;
+}
+
+.placeProducts input[type="submit"] {  
+  border: none;
+  outline: none;
+  background: var(--colorAguaMarina);
+  height: 40px;
+  font-size: 18px;
+  color: var(--colorBlanco);
+  margin-top: 4%;
+  cursor: pointer;
+}
+/*==========================================================*/
 
 main {
   width: 100%;
@@ -55,7 +173,7 @@ main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 30px;
 }
 
 .deleteCards {
@@ -69,19 +187,10 @@ main {
   cursor: pointer;
 }
 
-.deleteAll{
-    height: 34px;
-    width: 150px;
-    background-color: #16a29f;
-    color: #fff;
-    position: absolute;
-    transform: translate(-1%, -92%);
-}
-
 .card-product{
   width: 225px;
   height: 381px;
-  margin-top: 15px;
+  margin-top: 35px;
   border-radius: 15px;
   background-color: var(--colorGris);
   display: flex;
@@ -99,7 +208,7 @@ main {
 .name-product{
   text-align: center;
   padding: 4px;
-  color: var(--colorAzul);
+  color: var(--colorNegro);
   font-size: 1.5rem;
   font-weight: 600;
 }

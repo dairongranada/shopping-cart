@@ -38,16 +38,19 @@ nav {
 }
 
 .backContainer {
-  height: 150px;
+  height: 169px;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  justify-items: center;
+  align-content: stretch;
 }
 
+/*=======================      B  U  T  T  O  N     =========================*/
+
 .backContainer select {
-  width: 15rem; height: 45px;
+  width: 40%; height: 45px;
   background-color: var(--colorAzul);
   color: var(--colorBlanco);
   border: none;
@@ -56,9 +59,20 @@ nav {
 }
 
 .backContainer button{
-  width: 15rem; height: 45px;
+  width: 40%;; height: 45px;
   background-color: var(--colorAguaMarina);
   color: var(--colorBlanco);
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+#filterProducts{
+  width: 20%; height: 45px;
+  position: absolute;
+  top: 23vh;
+  background-color: var(--colorBlanco);
+  color: var(--colorNegro);
   font-size: 16px;
   cursor: pointer;
   border: none;
@@ -76,24 +90,18 @@ nav {
   gap: 5px;
 }
 
-.efectBlur{
-  visibility:hidden;
-  position: fixed;
-  top:0px;width: 100%;height: 100%;
-  background-color: var(--colorAguaMarina);
-  z-index: 1;
-}
-
 #efecttBlur{
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
-  background-color: rgba(0, 0, 0, 0.4);
+  visibility:hidden;
+  position: fixed; z-index: 1;
+  top:0px; width: 100%; height:100%;
+  backdrop-filter: blur(15px); /* EFECTO BLUR*/
+  background-color: rgba(0, 0, 0, 0.21);
 
 }
 
 .placeProducts {
   visibility:hidden;
-  width: 22%; height: 53vh; padding: 42px 20px;
+  width: 60vh; padding: 42px 20px;
   box-shadow: 7px 5px 10px var(--colorAzul);
   background: var(--colorBlanco); color: var(--colorNegro);
   top: 50%; left: 50%;
@@ -101,12 +109,11 @@ nav {
   transform: translate(-50%,-50%);
   box-sizing: border-box;
   font-size: 15px;
-  gap: 25px;
-  z-index: 1;
+  gap: 35px;
+  z-index: 0;
 }
 
-
-#closeContain {
+#closeContain{
   width: 29px;
   position: absolute;
   font-size: 20px;
@@ -148,6 +155,7 @@ nav {
 
 
 .placeProducts input[type="file"] {  
+
   margin-top: 4%;
   height: 40px;
   font-size: 15px;
@@ -155,41 +163,40 @@ nav {
   border: none;
 }
 
-.placeProducts input[type="submit"] {  
+#btnAddCard{
   border: none;
   outline: none;
   background: var(--colorAguaMarina);
-  height: 40px;
+  height: 40px; width: 100%;
   font-size: 18px;
   color: var(--colorBlanco);
   margin-top: 4%;
   cursor: pointer;
 }
+
 /*==========================================================*/
 
 main {
-  width: 100%;
-  height: auto;
+  width: 100%;height: auto;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
+  flex-wrap: wrap;gap: 60px;
+  margin-top: 8vh;
 }
 
 .deleteCards {
-  width: 29px;
+  height: 46px;width: 36px;font-size: 25px;
   position: absolute;
-  font-size: 20px;
   border: none;
-  background-color: var(--colorAguaMarina);
-  color: #fff;
-  transform: translate(87px, 4px);
+  background-color: transparent;color: #fff;
+  box-shadow: 4px 7px 8px #323131;
+  transform: translate(123px, 10px);
   cursor: pointer;
 }
 
-.card-product{
-  width: 225px;
-  height: 381px;
+.card-product {
+  width: 49vh;
+  height: 68vh;
   margin-top: 35px;
   border-radius: 15px;
   background-color: var(--colorGris);
@@ -200,9 +207,12 @@ main {
 }
 
 .img-product{
+  justify-content: center;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  height: 40vh;
   width: 100%;
-  height: 50%;
-  border-radius: 15px 15px 0 0;
+  overflow: hidden;
 }
 
 .name-product{
@@ -231,6 +241,19 @@ main {
   cursor: pointer;
   background-color: var(--colorGris);
   border: 1px solid var(--colorNegro);
+}
+
+
+/*==============   M E D I A   Q U E R I S   ==============*/
+
+@media (max-width:700px){
+  .backContainer {height: 276px;grid-template-columns: 1fr;}
+  #filterProducts {top: 32vh; width: 40%}
+  .placeProducts {width: 50vh;}
+
+  .deleteCards {transform: translate(92px, 10px);}
+
+  .card-product {height: 73vh;}
 }
 
 

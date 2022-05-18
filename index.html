@@ -18,21 +18,26 @@
   <nav class="nav"><h1>NIKE SHOP</h1></nav>
 
     <div class="backContainer">
-      <select name="" id="select-products">
-        <option value="">Select Your Product</option>
+      <select id="select-products">
+
       </select>
       <button id="btnAddProduct" >Add Shoes</button>
+      <select id="filterProducts">
+        <option value="">Filter Products</option>
+        <option value="all">ALL SHOES</option>
+        <option value="100k">Price: 100.000 - 200.000</option>
+        <option value="200k">Price: 200.000 - 300.000</option>
+      </select>
     </div>
-
-    <div class="efectBlur" id="efecttBlur">
+    <div id="efecttBlur">
       <div class="placeProducts">
           <button id="closeContain">X</button>
           <label>NAME</label>
-          <input id="nameShoes" type="text" placeholder="ENTER THE NAME">
+          <input id="nameShoes" required type="text" placeholder="ENTER THE NAME">
           <label>PRICE</label>
-          <input id="priceShoes"  type="text" placeholder="ENTER THE PRICE">
-          <input id="imgShoes"  type="file">
-          <input type="submit" value="Add Shoes">
+          <input id="priceShoes" required  type="text" placeholder="ENTER THE PRICE">
+          <input id="imgShoes" required  type="file">
+          <button id="btnAddCard">Add Shoes</button>
       </div>
     </div>
   <main></main>

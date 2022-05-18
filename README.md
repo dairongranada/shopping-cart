@@ -1,2 +1,2 @@
 # ShoppingCart
-<img src="img/Carrito decompras.png"  >
+<img src="img/"  >

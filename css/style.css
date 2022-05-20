@@ -303,14 +303,16 @@ main {
   .backContainer select{width: 64%;}
   .backContainer button{width: 64%;}
   .placeProducts {width: 40vh;}
-  #filterProducts {top: 33vh;width: 34%;transform: translate(-3%, 50%);}
-  #btnShopCart {left: 10%;top: 33vh;height: 11vh;width: 11vh; }
+  #filterProducts {top: 16vh;width: 34%;transform: translate(-3%, 50%);}
+
+
   .deleteCards {transform: translate(139px, 10px);}
   .card-product {height: 77vh;width: 52vh;}
   .img-product {height: 34vh;}
   #ShopCartContent {width: 80vh;}
   .imgShoesRecord {width: 75px; height: 75px;}
   #ShopCartContent {width: 40vh;}
+  #btnShopCart {left: 10%;top: 18vh;height: 7vh;width: 7vh;}
 }
 
 

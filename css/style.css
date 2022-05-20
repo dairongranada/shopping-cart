@@ -298,24 +298,19 @@ main {
 }
 
 
-@media (max-width:700px){
-  .backContainer {height: 156px;margin-bottom: 77px;}
+@media (max-width:500px){
+  .backContainer {height: 156px;margin-bottom: 145px;}
   .backContainer select{width: 64%;}
   .backContainer button{width: 64%;}
+  .placeProducts {width: 40vh;}
   #filterProducts {top: 33vh;width: 34%;transform: translate(-3%, 50%);}
   #btnShopCart {left: 10%;top: 33vh;height: 11vh;width: 11vh; }
-  .placeProducts {width: 50vh;}
-  .deleteCards {transform: translate(92px, 10px);}
+  .deleteCards {transform: translate(139px, 10px);}
   .card-product {height: 77vh;width: 52vh;}
   .img-product {height: 34vh;}
   #ShopCartContent {width: 80vh;}
   .imgShoesRecord {width: 75px; height: 75px;}
-}
-
-
-@media (max-width:400px){
-  #filterProducts {top: 30vh;}
-  #btnShopCart {top: 34vh;}
+  #ShopCartContent {width: 40vh;}
 }
 
 

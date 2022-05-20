@@ -13,8 +13,9 @@ const nameShoes =  document.getElementById("nameShoes");
 const priceShoes =  document.getElementById("priceShoes");
 const imgShoes =  document.getElementById("imgShoes");
 const btnAddCard =  document.getElementById("btnAddCard");
+
 ///////////////////////////////////////////////////////////////
-const filterProducts = document.getElementById("filterProducts")
+const filterProducts = document.getElementById("filterProducts");
 
 ////////////////      EVENTOS         /////////////////
 selectProducts.addEventListener('change', renderCards);
@@ -29,12 +30,11 @@ filterProducts.addEventListener("change",filterPrice);
 let imgSelected = "";
 let idTextShoess = "NikeShoes-";
 let idNumShoess = 7;
-
+let idFinish ;
 
 
 
 // ========  C R E A R   C A R D S  (MANUALMENTE)   ======== //
-
 
 function funAddContain() { //Funcion Para que Aparezca (EL MODAL)
   placeProducts.style.visibility ="visible";
@@ -54,7 +54,7 @@ function importImg(event){ //Funcion Para Crear URL a la img En el local
 
 
 function funcBtnAddCard(event){ //CAPTURA EL TITULO, PRECIO Y LA IMG 
-  const idFinish = idTextShoess + (idNumShoess++);
+  idFinish = idTextShoess + (idNumShoess++);
 
   const shoesAdd = {
     id: idFinish,
@@ -97,7 +97,9 @@ function renderCards() {
 }
 
 function listSelect() {
-  selectProducts.innerHTML = "";
+    let optionS = document.createElement('option');
+    optionS.textContent ="SELECT YOUT SHOES";
+    selectProducts.innerHTML = "";
     nikeForceOne.map (element =>{
 
     let listSelect = document.createElement('option');
@@ -137,9 +139,17 @@ function createCards(nikeForceOne) {
     btnDelete.textContent = 'X';
 
     btnDelete.addEventListener('click', deleteCards); // EVENTO PARA ELIMINAR LA CARD
-
-  function deleteCards() { // FUNCION PARA ELIMINAR LA CARD
+    function deleteCards() { // FUNCION PARA ELIMINAR LA CARD
     contentCard.remove(); 
+
+    btnAdd.addEventListener('click',funcionclick);
+    
+    function funcionclick(e) {
+      console.log(e.id);
+      console.log("ss");
+    }
+
+
   }
 
     contentCard.appendChild(imgCard);
@@ -150,8 +160,45 @@ function createCards(nikeForceOne) {
     mainCards.appendChild(contentCard);
 }
 
+/////////////////////////////////////////////////////////////////////////////////
+// ========      A G R E G A R   C A R R I T O   D E   C O M P R A S   ======== //
 
 
 
 
 
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+// ========      L O G O   C A R R I T O   D E   C O M P R A S       ======== //
+const shopCartContents = document.getElementById("ShopCartContent");
+const efecttBlurShops = document.getElementById("EfecttBlurShop");
+
+const btnCart = document.getElementById("btns")
+const closeShoesRecord = document.getElementById("closeShoesRecord");
+
+btnCart.addEventListener("click", funCartRecord)
+closeShoesRecord.addEventListener("click", funCartclose)
+function funCartRecord() { //Funcion Para que Aparezca El historias De Compra
+  shopCartContents.style.visibility = "visible";
+  efecttBlur.style.visibility = "visible";
+}
+
+function funCartclose() { 
+  shopCartContents.style.visibility = "hidden";
+  efecttBlur.style.visibility = "hidden";
+}
+///////////////////////////////////////////////////////////////////////////////////
+// ========      B O T O N   C A R R I T O   D E   C O M P R A S       ======== //
+
+
+///////////////////////////////////////////////////////////////////////////////////
+// ========     B  O  T  O  N       D  E      A  U  M  E  N  T  O       ======== //
+const incrementt = document.getElementById("addShoesRecord");
+const amuntt = document.getElementById("amountShoesRecord");
+
+incrementt.addEventListener('click', funcIncrement);
+
+///////////////////////////////////////////////////////////////////////////////////
+// ========     B  O  T  O  N     D  E     D E S A  U  M  E  N  T  O    ======== //

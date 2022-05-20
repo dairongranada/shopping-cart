@@ -22,7 +22,7 @@
 body {   
   background: rgba(5,7,12,0.75);
   background-image: linear-gradient(rgba(0,0,100,0.5),rgba(0,100,0,0.5)), url("../img/background.jpg");
-  background-attachment: fixed;background-size: cover;background-position: center;
+  background-attachment: fixed;background-size: cover;background-position: center; padding: 0 0 46px;
 }
 
 nav {
@@ -47,6 +47,53 @@ nav {
   align-content: stretch;
 }
 
+/*=======================       C A R R I T O   D E   C O M P R A S     =========================*/
+#btnShopCart{
+  position: absolute;
+  width: 9vh;height: 9vh;
+  background-color: var(--colorBlanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  border-radius: 50px;
+  left: 48%;top: 11vh;
+  cursor: pointer;
+}
+#btnShopCart button{cursor: pointer; background-color:transparent; border: none; cursor: pointer;}
+#btnShopCart img{width: 45px;padding-right: 5px;}
+
+#ShopCartContent{
+    visibility:hidden;
+    width: 100vh;padding: 42px 20px;
+    box-shadow: 7px 5px 10px var(--colorAzul);
+    background: var(--colorBlanco);
+    color: var(--colorNegro);
+    top: 50%;left: 50%;
+    position: absolute;transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    font-size: 15px;
+    gap: 35px;z-index: 1;
+}
+
+.titleShoesRecord{text-align: center;}
+hr {border: none;border-bottom: 1px solid rgba(9, 9, 9, 0.47);width: 100%;margin-top: 15px;margin-bottom: 15px;}
+
+
+.productShoesRecord {display: flex;justify-content: space-between;align-items: center; margin-top: 15px;}
+#imgShoesRecord{width: 108px;height: 90px;border-radius: 22%;}
+#nameShoesRecord{color:#534b4b;font-size: 13px;}
+#priceShoesRecord{color:#534b4b;font-size: 13px;}
+#amountShoesRecord{color:#534b4b;font-size: 13px; text-align: center;}
+#addShoesRecord{width: 25px; background-color:var(--colorAguaMarina);border:none; cursor:pointer}
+#eraseShoesRecord{width: 25px; background-color: red; border:none;cursor:pointer}
+
+#closeShoesRecord{
+  width: 29px;position: absolute;font-size: 20px;border: none;
+  background-color: #666;color: #fff;
+  transform: translate(-50, 50%);cursor: pointer;
+  top: 4%;left: 88%;
+}
 /*=======================      B  U  T  T  O  N     =========================*/
 
 .backContainer select {
@@ -96,7 +143,6 @@ nav {
   top:0px; width: 100%; height:100%;
   backdrop-filter: blur(15px); /* EFECTO BLUR*/
   background-color: rgba(0, 0, 0, 0.21);
-
 }
 
 .placeProducts {
@@ -166,7 +212,7 @@ nav {
 #btnAddCard{
   border: none;
   outline: none;
-  background: var(--colorAguaMarina);
+  background: #666;
   height: 40px; width: 100%;
   font-size: 18px;
   color: var(--colorBlanco);
@@ -195,8 +241,7 @@ main {
 }
 
 .card-product {
-  width: 49vh;
-  height: 68vh;
+  width: 38vh;height: 58vh;
   margin-top: 35px;
   border-radius: 15px;
   background-color: var(--colorGris);
@@ -210,12 +255,12 @@ main {
   justify-content: center;
   border-radius: 10px 10px 0 0;
   display: flex;
-  height: 40vh;
-  width: 100%;
+  height: 28vh;width: 100%;
   overflow: hidden;
 }
 
 .name-product{
+  margin-top: 5vh;
   text-align: center;
   padding: 4px;
   color: var(--colorNegro);
@@ -244,16 +289,33 @@ main {
 }
 
 
-/*==============   M E D I A   Q U E R I S   ==============*/
+/*==============   M E D I A   Q U E R I S   ==============*/ 
+@media (max-width:1400px){
+  #btnShopCart {left: 13vh;top: 19vh;}
+  #btnShopCart img {width: 32px;padding-right: 6px;}
+  .deleteCards {transform: translate(242%, 7%);}
+  #closeShoesRecord {left: 92%;}
+}
+
 
 @media (max-width:700px){
-  .backContainer {height: 276px;grid-template-columns: 1fr;}
-  #filterProducts {top: 32vh; width: 40%}
+  .backContainer {height: 156px;margin-bottom: 77px;}
+  .backContainer select{width: 64%;}
+  .backContainer button{width: 64%;}
+  #filterProducts {top: 33vh;width: 34%;transform: translate(-3%, 50%);}
+  #btnShopCart {left: 10%;top: 33vh;height: 11vh;width: 11vh; }
   .placeProducts {width: 50vh;}
-
   .deleteCards {transform: translate(92px, 10px);}
+  .card-product {height: 77vh;width: 52vh;}
+  .img-product {height: 34vh;}
+  #ShopCartContent {width: 80vh;}
+  .imgShoesRecord {width: 75px; height: 75px;}
+}
 
-  .card-product {height: 73vh;}
+
+@media (max-width:400px){
+  #filterProducts {top: 30vh;}
+  #btnShopCart {top: 34vh;}
 }
 
 

@@ -296,12 +296,15 @@ main {
 }
 
 
+
+
 @media (max-width:500px){
   .backContainer {height: 156px;margin-bottom: 145px;}
   .backContainer select{width: 64%;}
   .backContainer button{width: 64%;}
   .placeProducts {width: 40vh;}
   #filterProducts {top: 16vh;width: 34%;transform: translate(80%, 50%);}
+
 
   .deleteCards {transform: translate(139px, 10px);}
   .card-product {height: 77vh;width: 52vh;}

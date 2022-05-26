@@ -9,7 +9,6 @@
   text-decoration: none;
   outline: none /*Quita el border Del los Inputs (Al dar click) */
 }
-
 :root{
   --colorNegro: #000;
   --colorBlanco: #fff;
@@ -57,11 +56,14 @@ nav {
   justify-content: center;
   z-index: 0;
   border-radius: 50px;
-  left: 48%;top: 11vh;
+  left: 13vh;top: 19vh;
   cursor: pointer;
 }
 #btnShopCart button{cursor: pointer; background-color:transparent; border: none; cursor: pointer;}
-#btnShopCart img{width: 45px;padding-right: 5px;}
+#btnShopCart img {width: 30px;padding-right: 8px;}
+#divNumberAument{ background-color: transparent;  color: var(--colorBlanco);position: absolute;  top: 1vh;left: 6vh; height:3vh; padding:5px ; font-weight: 500; border-radius: 50%; display: flex; justify-content: center; align-items: center; }
+
+#divNumberAument p{margin-top: none;margin-bottom: 0px;}
 
 #ShopCartContent{
     width: 100vh;padding: 42px 20px;
@@ -123,6 +125,7 @@ hr {border: none;border-bottom: 1px solid rgba(9, 9, 9, 0.47);width: 100%;margin
   border: none;
 }
 
+
 /*==========================================================*/
 #AgregarProduct{
   background-color: var(--colorGris);
@@ -134,6 +137,7 @@ hr {border: none;border-bottom: 1px solid rgba(9, 9, 9, 0.47);width: 100%;margin
   position: absolute;
   gap: 5px;
 }
+
 
 #efecttBlur{
   visibility: hidden;
@@ -219,7 +223,6 @@ hr {border: none;border-bottom: 1px solid rgba(9, 9, 9, 0.47);width: 100%;margin
 }
 
 /*==========================================================*/
-
 main {
   width: 100%;height: auto;
   display: flex;
@@ -227,14 +230,13 @@ main {
   flex-wrap: wrap;gap: 60px;
   margin-top: 8vh;
 }
-
 .deleteCards {
   height: 46px;width: 36px;font-size: 25px;
   position: absolute;
   border: none;
   background-color: transparent;color: #fff;
   box-shadow: 4px 7px 8px #323131;
-  transform: translate(123px, 10px);
+  transform: translate(89px, 2px);
   cursor: pointer;
 }
 
@@ -258,7 +260,6 @@ main {
 }
 
 .name-product{
-  margin-top: 5vh;
   text-align: center;
   padding: 4px;
   color: var(--colorNegro);
@@ -269,34 +270,42 @@ main {
 .price-product{
   font-size: 1.2rem;
   font-weight: 600;
+  margin-bottom: 0px;
   color: var(--colorcafe);
 }
 
-.btn-add {
-  width: 140px;
-  height: 40px;
-  color: var(--colorNegro);
-  font-size: 20px;
-  font-weight: 900;
+.btnShopCart {width: 140px;height: 40px;color: var(--colorNegro);border:none;font-size: 20px;cursor: pointer;}
+.btnShopCart:hover{background-color: var(--colorAguaMarina);  }
+.btnAddCart {width: 140px;height: 40px;color: var(--colorNegro);border:none; font-size: 20px;cursor: pointer;}
+.btnAddCart:hover{background-color: var(--colorVerde);color: #fff; }
+
+
+
+
+#comingSoon{
+  visibility:hidden;
+  position: fixed; z-index: 1;
+  top:0px; width: 100%; height:100%;
+  backdrop-filter: blur(1px); /* EFECTO BLUR*/
+  background-color: rgb(0, 0, 0);
+  display: flex;justify-content: center;align-items: center;
 }
 
-.btn-add:hover{
-  cursor: pointer;
-  background-color: var(--colorGris);
-  border: 1px solid var(--colorNegro);
-}
+#CloseComingSoon{color: #fff; position:absolute; top:0vh; right: 2vh;font-size:50px;cursor:pointer }
 
+.titleCloseComingSoon {
+  color: #fff; font-size:35vh; 
+  text-align: center; 
+  position: relative;
+  text-transform: uppercase;
+  text-shadow: 15px 12px 12px  rgba(255, 255, 255, .6)
+}
 
 /*==============   M E D I A   Q U E R I S   ==============*/ 
-@media (max-width:1400px){
-  #btnShopCart {left: 13vh;top: 19vh;}
-  #btnShopCart img {width: 32px;padding-right: 6px;}
-  .deleteCards {transform: translate(242%, 7%);}
-  #closeShoesRecord {left: 92%;}
+
+@media (max-width:800px){
+  .titleCloseComingSoon {font-size:170px;}
 }
-
-
-
 
 @media (max-width:500px){
   .backContainer {height: 156px;margin-bottom: 145px;}
@@ -304,7 +313,7 @@ main {
   .backContainer button{width: 64%;}
   .placeProducts {width: 40vh;}
   #filterProducts {top: 16vh;width: 34%;transform: translate(80%, 50%);}
-
+  .titleCloseComingSoon {color: #fff; font-size:101px; text-align: center;}
 
   .deleteCards {transform: translate(139px, 10px);}
   .card-product {height: 77vh;width: 52vh;}
@@ -314,8 +323,3 @@ main {
   #ShopCartContent {width: 40vh;}
   #btnShopCart {left: 10%;top: 18vh;height: 7vh;width: 7vh;}
 }
-
-
-
-
-

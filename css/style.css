@@ -312,14 +312,14 @@ main {
   .backContainer select{width: 64%;}
   .backContainer button{width: 64%;}
   .placeProducts {width: 40vh;}
-  #filterProducts {top: 16vh;width: 34%;transform: translate(80%, 50%);}
+  #filterProducts {top: 23vh;width: 32%;transform: translate(-1%, 50%);}  
   .titleCloseComingSoon {color: #fff; font-size:101px; text-align: center;}
 
-  .deleteCards {transform: translate(139px, 10px);}
-  .card-product {height: 77vh;width: 52vh;}
+  .deleteCards {transform: translate(107px, 10px);}
+  .card-product {height: 77vh;width: 45vh;}
   .img-product {height: 34vh;}
   #ShopCartContent {width: 80vh;}
   .imgShoesRecord {width: 75px; height: 75px;}
   #ShopCartContent {width: 40vh;}
-  #btnShopCart {left: 10%;top: 18vh;height: 7vh;width: 7vh;}
+  #btnShopCart {left: 10%;top: 27vh;height: 9vh;width: 9vh;}
 }
